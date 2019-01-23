@@ -1,6 +1,6 @@
 # Notes
 ## Tools
-[Docker](/tools/docker.md)
+[Docker](/tools/docker/docker.md)
 ## References
 [:green_book: Getting to Yes By Richard Rumelt](/soft-skills/getting-to-yes.md)
 

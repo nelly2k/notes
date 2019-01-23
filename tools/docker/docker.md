@@ -1,10 +1,9 @@
 # Docker
 
-## Links
-[Docker for Web Developers on Pluralsight](https://app.pluralsight.com/library/courses/docker-web-development/table-of-contents)
+[:arrow_forward: Docker for Web Developers on Pluralsight](https://app.pluralsight.com/library/courses/docker-web-development/table-of-contents)
 
 [Docker hub](https://hub.docker.com)
-
+___
 Docker is a lightweight, open, secure platform. Simplify building, shipping, running apps in various environments (staging, test, dev, prod). It provides shipping container system for code. 
 
 __Image__ is a read-only template composed of layered filesystems used to share common files and create Docker container instances.
@@ -32,7 +31,7 @@ Virtual Machine runs on top of the host operating system  and hypervisor - copy 
 - Run and Manage Containers
 
 ## Login
-To login with CLI you need to use your ID and not email, to find an id login to [Docker Hub](https://hub.docker.com) and check your id in top right corner.
+`docker login` To login with CLI you need to use your ID and not email, to find an id login to [Docker Hub](https://hub.docker.com) and check your id in top right corner.
 
 ## Commands
 _docker pull [image name]_ - pulls ready to use image from docker hub repository (i.e. sql server. node js)
@@ -56,8 +55,30 @@ _docker ps_ - list of running containers (-a all containers)
 
 `docker rm [57b - first characters of an CONTAINER ID]` removes conatiner
 
-`docker rmi [fce - first characters of id` delete image from disk
+`docker rmi [fce - first characters of id]` delete image from disk
 
+## Hooking Source Code into a Container
 
-## Hooking Your Source Code into a Container
+__Volumes__ - special type of directory in a container typially referred to as a "data volume". Can be shared and used among multiple containers. It persistent, even if container has been deleted.
 
+`docker run -p 8080:3000 -v /var/www node` - 8080 is external port, 3000 - internal
+
+`docker inspect` - returns low level details on Docker object
+
+## Generate some code
+`npm install` in this folder
+
+`.\node_modules\.bin\express ExpressSite --hbs`
+
+`cd ExpressSite`
+
+`npm install`
+
+`SET DEBUG=expresssite:* & npm start` - runs locally, available on http://localhost:3000/
+
+`docker run -p 8080:3000 -v ${pwd}:/var/www -w "/var/www" node npm start` - pwd - current working directory
+-w - working directory, setting context
+
+## Format command
+
+`docker inspect  -f "{{json .Mounts}}" sql1`
