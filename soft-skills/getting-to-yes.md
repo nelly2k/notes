@@ -4,9 +4,9 @@
 
 ## Why positional bargaining is bad.
 
-	1. Produces unwise outcome, because you aren't communicate the underlying needs
-	2. Inefficient. People stick with position, rather than solving real issue.
-	3. Endangers relationships. 
+1. Produces unwise outcome, because you aren't communicate the underlying needs
+2. Inefficient. People stick with position, rather than solving real issue.
+3. Endangers relationships. 
 
 ## Principled negotiation
 ### Separate the people from the problem. 
@@ -51,9 +51,9 @@ __The better you BATNA, the greater you power.__
 
 Use "negotiation jiujitsu"
 
-	• Neither reject not accept their positions but rather ask them how they think if addresses the problem at hand  in order to extract interests.
-	• Hypothetically discuss the outcomes they are suggesting to direct attention to invention more options
-	• Don't defend your ides; invite criticism and advice
+- Neither reject not accept their positions but rather ask them how they think if addresses the problem at hand  in order to extract interests.
+- Hypothetically discuss the outcomes they are suggesting to direct attention to invention more options
+- Don't defend your ides; invite criticism and advice
 
 Please correct me if I'm wrong
 

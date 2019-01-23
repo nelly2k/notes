@@ -1,4 +1,10 @@
 # Docker
+
+## Links
+[Docker for Web Developers on Pluralsight](https://app.pluralsight.com/library/courses/docker-web-development/table-of-contents)
+
+[Docker hub](https://hub.docker.com)
+
 Docker is a lightweight, open, secure platform. Simplify building, shipping, running apps in various environments (staging, test, dev, prod). It provides shipping container system for code. 
 
 __Image__ is a read-only template composed of layered filesystems used to share common files and create Docker container instances.
@@ -8,12 +14,50 @@ __Container__ is an isolated and secured shipping container created from an imag
 
 Virtual Machine runs on top of the host operating system  and hypervisor - copy of OS for every VM, images are huge.  Containers run on top of the host operating system, but docker engine integrate them into parent OS. Having tiny image, containers start very fast.
 
-Docker might help with versioning, "work on my machine" issue
+## Benefits
+- Docker might help with versioning 
+- "work on my machine" issue
+- fast shipping
+- works the same on every environment
 
-Docker Toolbox
-
+## Docker Toolbox
 - Docker Client
 - Docker Machine
-- Docker Compose - container orchestration
+- Docker Compose - containers orchestration
 - Docker Kitematic (GUI)
+
+# Docker Client
+- Interact with Docker Engine
+- Build and Manage Images
+- Run and Manage Containers
+
+## Login
+To login with CLI you need to use your ID and not email, to find an id login to [Docker Hub](https://hub.docker.com) and check your id in top right corner.
+
+## Commands
+_docker pull [image name]_ - pulls ready to use image from docker hub repository (i.e. sql server. node js)
+
+_docker run [image name]_ - runs image
+
+_docker images_ - list of download images
+
+_docker ps_ - list of running containers (-a all containers)
+
+
+### Example 
+
+`docker pull hello-world` - downloads hello-world image
+
+`docker images` there going to be hello-world
+
+`docker run hello-world` executes
+
+`docker ps -a` see list of containers, need -a because this container not running at the moment
+
+`docker rm [57b - first characters of an CONTAINER ID]` removes conatiner
+
+`docker rmi [fce - first characters of id` delete image from disk
+
+
+## Hooking Your Source Code into a Container
 
