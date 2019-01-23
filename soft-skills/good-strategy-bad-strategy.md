@@ -1,4 +1,4 @@
-# Good Strategy, Bad strategy
+# :green_book: Good Strategy, Bad strategy
 ## By Richard Rumelt
 Strategy is not a goal or slogan, it should not only defined the end state, but also provide execution plan of how this goal must be achieved.
 
