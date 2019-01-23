@@ -12,7 +12,8 @@ Docker might help with versioning, "work on my machine" issue
 
 Docker Toolbox
 
-	- Docker Client
-	- Docker Machine
-	- Docker Compose - container orchestration
-Docker Kitematic (GUI)
+- Docker Client
+- Docker Machine
+- Docker Compose - container orchestration
+- Docker Kitematic (GUI)
+
