@@ -76,8 +76,12 @@ __Volumes__ - special type of directory in a container typially referred to as a
 
 `SET DEBUG=expresssite:* & npm start` - runs locally, available on http://localhost:3000/
 
-`docker run -p 8080:3000 -v ${pwd}:/var/www -w "/var/www" node npm start` - pwd - current working directory
+`docker run -p 8080:3000 -v ${pwd}:/var/www -w "/var/www" node npm start` 
+
+pwd - current working directory, in bash use $(pwd), powershell ${pwd}
+
 -w - working directory, setting context
+
 
 ## Format command
 

@@ -39,8 +39,7 @@ Look for standards, so the result should be fair for both sides.
 
 You want a high price and I want a low one, let's figure out what a fair price would be. What objective standards might be most relevant? How did you determine your price?
 	
-	
-#BATNA
+# BATNA
 Best alternative to a negotiated agreement, backup plan.
 1. Protect yourself by developing aa BATNA. What you would do if you fail to reach an agreement – and use it as the standard against which any proposed agreement is measured. BATNA should be real, fully explored and ready to be actioned.
 2. Formulate a trip wire. Before accepting any agreement worse than this trip-wire package, you should take a break and re-examine the situation.
@@ -56,5 +55,3 @@ Use "negotiation jiujitsu"
 - Don't defend your ides; invite criticism and advice
 
 Please correct me if I'm wrong
-
-
