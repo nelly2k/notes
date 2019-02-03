@@ -9,3 +9,5 @@
 [:green_book: Peopleware: Productive Projects and Teams By Tom DeMarco](/soft-skills/peopleware.md)
 
 [:page_with_curl: How to be strategic](/soft-skills/how-to-be-strategic.md)
+
+[:green_book: Measure What Matters By John Doerr](/soft-skills/measure-what-matters.md)
