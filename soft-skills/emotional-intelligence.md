@@ -19,3 +19,7 @@
 1. Look closely at the things you identify with.
 1. Ask others to give you feedback and seek honesty, even when it may be difficult to hear.
 1. When you're stressed, work to understand your emotions and reactions better.
+
+# Self-management strategies
+1. Breath deep.
+1. 
