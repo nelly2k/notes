@@ -19,4 +19,15 @@ read returns a result that reflects all writes that received a successful respon
 - Key - the name of the data. Value - the data itself
 - Documents can be written in JSON, HTML or XML
 
+## Primary Key
+### Partition key
+Unique attribute, input into internal hash function that determines the partition or physical location on which the data is stored.
 
+### Composite Key
+Combination of a partition key and sort key.
+In this pase partition key is not unique, but combination is.
+
+## Access Control
+- managed using AWS IAM
+- can generate temporary access keys
+- can use special IAM condition to restrict user access to only their own records (for example a Policy that allow access only to items where the Partition Key values matches their User ID). Condition parameter: __dynamodb:LeadingKeys__
