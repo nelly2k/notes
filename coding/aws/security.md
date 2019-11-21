@@ -1,10 +1,5 @@
 # Security
 
-## Triad models
-CIA
-AAA
-Non-repudiation (can't deny) - CloudTrail
-
 ## CIA model
 Confidentiality, Integrity, Availability
 
