@@ -122,3 +122,5 @@ Asset, audit and evaluate resources. Review changes in configuration and relatio
 - Change management, audit all configuration changes
 - streams changes in SNS
 - define rules
+
+CloudTrail - event history of account activity, including actions taken through console, API, SDK, CLI.
