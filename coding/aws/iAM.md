@@ -47,4 +47,9 @@ You prefer to keep access control policies in the S3 environment.
 Explicit deny - deny everything for everybody - overrides an allow!
 
 
-In case of conflicting policies, a S3 policy wins.
+## Policy conflicts
+Whenever an AWS principle (user,group, role) issues a request to S3, the authorization decision depends on the union of all the IAM policies, S3 bucket policies, and S3 ACLs that apply.
+
+So if you DENY access to something somewhere and then something else allows access, the DENY will override the ALLOW.
+
+Only if no method specifies a DENY and one or more methods specify an ALLOW will the request be allowed.

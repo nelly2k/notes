@@ -15,8 +15,19 @@ Messages can be kept in queue from 1 minute to 14 days. The default retention pe
 Amazon SQS long polling is a wy to retrieve messages from your Amazon SQS queues. While the regular short polling returns immediately, long polling doesn't return a response until a message arrives in the message queue, or the long poll times out.
 
 ## Types
+# Simple Queue Service
+
+- distributed message queueing system
+- allow to decouple the components of an applications so that they are independent
+- pull-based
+- visibility timeout - 30sec, increase if taks takes >30 seconds to complete. Max 12 hours.
+- short polling - returned immediately even if no messages are in the queue. 
+- long polling - polls the queue periodically and only returns a response when a message is in the queue or go the timeout is reached. Max 20 sec
+
 ### Standard (default)
+
 Nearly unlimited number of transactions per second. It guarantees that message is delivered at least once. Sometimes it delivers more than once. It provides best-effort ordering which ensures that messages are generally delivered in the same order as they sent - no promises.
+
 ### FIFO
 Order is guarantee and one time processed. No duplicates.
 
