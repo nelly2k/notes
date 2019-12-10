@@ -21,5 +21,5 @@ is a fully managed service that makes it easy to publish, maintain, monitor, and
 ## API Caching
 You can enable API caching in order to cache you endpoint;s response.  
 
-## SOme Origin Policy
+## Same Origin Policy
 Under the policy, a web browser permits scripts contained in a first web page to access data in second web page, but only if both pages have the same origins. This is preventing XSS attacks. 
