@@ -23,6 +23,32 @@ Can be used as an event-driven compute service where Lambda get invoked in respo
 - lambda can trigger other functions, 1 event = x functions if function trigger other functions
 - can be used across regions
 
+
+## [Triggers](https://aws.amazon.com/blogs/architecture/understanding-the-different-ways-to-invoke-lambda-functions/)
+### Synchronous 
+```—invocation-type RequestResponse```
+- HTTP event through API gateway/load balancer
+- Cognito
+- Alexa
+- Other Lambdas
+
+### Asynchronous 
+if returns an error it get retry twice
+
+```—invocation-type Event```
+- S3 event
+- SNS, SES
+- CloudWatch events (reoccurring)
+- CodeCommit
+- CloudFormation
+
+### Poll-Based (stream & queues)
+lambda will pol on your behalf
+
+- SQS
+- DynamoDb stream event 
+- Kinesis
+
 ## Version Control
 - Lambda can have multiple versions function deployed
 - Latest always is going to be marked as $latest
