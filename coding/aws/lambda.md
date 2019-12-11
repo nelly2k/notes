@@ -59,6 +59,7 @@ retry based on data expiration
 - Cannot split traffic with $latests, unless an alias created for it.
 
 # Step Functions
+![Step function](./stepfunction.jpg)
 - serverless application visualisation
 - SF triggers and tracks each step
 - SF logs
