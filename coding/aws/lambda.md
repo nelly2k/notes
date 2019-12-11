@@ -45,6 +45,8 @@ if returns an error it get retry twice
 ### Poll-Based (stream & queues)
 lambda will pol on your behalf
 
+retry based on data expiration
+
 - SQS
 - DynamoDb stream event 
 - Kinesis

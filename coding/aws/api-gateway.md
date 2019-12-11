@@ -2,7 +2,7 @@
 is a fully managed service that makes it easy to publish, maintain, monitor, and secure APIs. 
 
 - Expose HTTP endpoints to define a RESTful API
-- connect to services like lambda nd dynamoDB
+- connect to services like lambda and dynamoDB
 - each endpoint to a different target
 - track and control usage by API key
 - throttle requests to prevent attacks. Will return 429 in case of overuse. Can throttle by API key.
