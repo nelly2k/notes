@@ -33,7 +33,7 @@ Example:
 
 
 Circuit breaker - Netflix 
-![Diagram](./circuit_breaker.drawio)
+![Diagram](./circuit_breaker.png)
 
 
 Bulkhead
