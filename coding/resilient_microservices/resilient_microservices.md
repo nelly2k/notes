@@ -33,6 +33,7 @@ Example:
 
 
 Circuit breaker - Netflix 
+![Diagram](./circuit_breaker.drawio)
 
 
 Bulkhead
@@ -45,3 +46,7 @@ Elasticity is not scalability, it is about allocating and deallocating resources
 
 ## Message driven
 loose coupling between services
+
+
+To read:
+https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/resilient-high-availability-microservices
