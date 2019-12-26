@@ -67,4 +67,43 @@ __Query__ operation finds items in a table based on the Primary Key attribute an
 ## Scan
 __Scan__ operation examines every item in the table
 - all attributes by default
-- use __ProjectionExpressions__ to refine
+- use __ProjectionExpressions__ to refine output
+
+### how to improve performance
+- set smaller page size
+- large number of smaller operations will allow other requests to succeed without throttling
+- avoid scan if you can use Query, Get, BatchGetItem APIs
+- by default scan operation processes data sequentially in returning 1Mb increments before moving on to retrieve the next 1Mb of data. It scans 1 partition at a time.
+- you can use __parallel scans__ instead by logically dividing a table or index into segments and scanning each segment in parallel
+- best to avoid parallel scans in a table of index is already incurring heavy read/write activity from other application
+
+## vs
+- query is more efficient
+- scan dumps entire table and the removed items you don't need
+- scan operation on a large table can use up the provisioned throughput for a large table in just a single operation
+
+# Provisioned Throughput
+measured in capacity units
+
+1 write capacity unit = 1Kb write/sec
+
+1 read capacity unit = 1Kb strongly consistent read of 4Kb/sec __OR__ 2 eventually consistent reads of 4Kb/sec
+
+if your application reads or writes larger items is will consume more capacity units and will cost you more as well
+
+:green_book: Table with 5RCU and 5WCU 
+- 5RCU * 4Kb strongly consistent reads = 20Kb/sec
+- 5RCU * 2 * 4Kb eventual consistent reads = 40Kb/sec
+- 5WRU * 1kb writes = 5Kb/sec 
+
+:green_book: An application needs to read 80 items/sec, each item 3Kb, you need Strongly Consistent Reads
+
+- calc how many RCU needed for each read: 3Kb/4Kb = 0.75, rounded to nearest round number = 1
+- multiply by the number of reads per second = 80 RCU required
+- divide by 2 for eventual consistency - 40RCU
+
+# On-Demand Capacity Option
+- charges apply for reading, writing and storing
+- don't need to specify requirements
+- dynamoDb scales up and down based on activity
+- pay per request
