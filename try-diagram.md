@@ -2,4 +2,11 @@
 # Hello
 ![Diagram](./Untitled_Diagram.png)
 
-[Edit]()
+
+<a href="http://jgraph.github.io/drawio-github/self-editing.svg" target="_blank">self-editing.svg</a>
+
+<a href="./Untitled_Diagram.svg" target="_blank">self-editing.svg</a>
+![Self-editing Diagram](./Untitled_Diagram.svg)
+
+[Edit as New](https://www.draw.io/https://github.com/nelly2k/notes/raw/master/Untitled_Diagram.png)
+[Edit](http://jgraph.github.io/drawio-github/edit-diagram.html?repo=notes&path=Untitled_Diagram.png)
