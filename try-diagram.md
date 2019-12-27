@@ -5,6 +5,8 @@
 
 <a href="http://jgraph.github.io/drawio-github/self-editing.svg" target="_blank">self-editing.svg</a>
 
+<a href="http://jgraph.github.io/drawio-github/self-editing.svg" target="_blank">my self-editing.svg</a>
+
 <a href="./Untitled_Diagram.svg" target="_blank">self-editing.svg</a>
 ![Self-editing Diagram](./Untitled_Diagram.svg)
 

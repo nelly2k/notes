@@ -1,0 +1,4 @@
+- Atomic - threated as a single unit, cannot be partially completed
+- Consistent - must leave database in a valid state, no corruption or data integrity issues
+- Isolated - no dependency between different transactions
+- Durable - if transaction is committed, it remain committed eve in case of system failure

@@ -1,0 +1,27 @@
+Description: Lambda deployed with cloudformation
+# Parameters:
+#   EnvName:
+#     Type: String
+#     Description: Name of an environment. 'dev', 'staging', 'prod' and any name.
+#     AllowedPattern: ^.*[^0-9]$
+#     ConstraintDescription: Must end with non numberic character.
+Resources:
+  LabsLambdaRole:
+    Type: AWS::IAM::Role
+    Description: Basic role for lambda in order to execute
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          -
+            Action:
+              - sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+  LabsLambda:
+    Type: AWS::Lambda::Function
+    Properties: 
+      Handler: index.handler
+      Runtime: nodejs10.x
+      Role: !GetAtt LabsLambdaRole.Arn

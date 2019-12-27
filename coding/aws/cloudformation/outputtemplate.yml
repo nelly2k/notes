@@ -1,0 +1,26 @@
+Description: Lambda deployed with cloudformation
+Resources:
+  LabsLambdaRole:
+    Type: AWS::IAM::Role
+    Description: Basic role for lambda in order to execute
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Action:
+          - sts:AssumeRole
+          Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+  LabsLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs10.x
+      Role:
+        Fn::GetAtt:
+        - LabsLambdaRole
+        - Arn
+      Code:
+        S3Bucket: nelli-my-money-artefacts
+        S3Key: 2ff5181f5e220c8051d868c35661a362

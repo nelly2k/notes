@@ -87,7 +87,7 @@ measured in capacity units
 
 1 write capacity unit = 1Kb write/sec
 
-1 read capacity unit = 1Kb strongly consistent read of 4Kb/sec __OR__ 2 eventually consistent reads of 4Kb/sec
+1 read capacity unit = 1 strongly consistent read of 4Kb/sec __OR__ 2 eventually consistent reads of 4Kb/sec
 
 if your application reads or writes larger items is will consume more capacity units and will cost you more as well
 
@@ -102,8 +102,60 @@ if your application reads or writes larger items is will consume more capacity u
 - multiply by the number of reads per second = 80 RCU required
 - divide by 2 for eventual consistency - 40RCU
 
+
+## Provisioned Throughput Exceeded & Exponential Backoff
+_ProvisionedThoughputExceededException_ - your request rate is too high for read/write capacity provisioned on your table
+- SDK will retry automatically untill success
+- if you aren't using SDK you can reduce frequency or use __Exponential Backoff__ 
+
+### Exponential Backoff
+- all AWS SDKs use Exponential Backoff
+- progressively longer waits between consecutive retries e.g. 50ms, 100ms, 200ms
+- if it doesn't work after 1 minute, your request size may be exceeded the thoughput for your read/write capacity
+
 # On-Demand Capacity Option
 - charges apply for reading, writing and storing
 - don't need to specify requirements
 - dynamoDb scales up and down based on activity
 - pay per request
+
+# Accelerator (DAX)
+Is a fully managed, clustered in-memory cache for DynamoDb
+
+- up to 10x read performance improvement
+- ideal fir read-heavy and bursty workloads
+- write-through caching service - data is written to the cache as well as the back end store at the same time
+- allow you point your dynamoDb API calls to the DAX cluster
+- if item not available then go to dynamoDb and cache
+- may be able to reduce provision
+
+## not suitable for
+- only eventually consistent reads, no strong consistency
+- write intense application
+- low reads
+- when app do not require microseconds response times
+
+# Transactions
+- ACID transactions (Atomic, Consistent, Isolated, Durable)
+
+- Read or write multiple items across multiple tables as an all or nothing operation
+- check for a pre-requisite condition before writing to a table
+
+# TTL (Time to Live)
+defines an expiry time for your data
+- expired items marked for deletion and deleted within 48 hours
+- when querying you can filter out expired items
+- great for removing irrelevant or old data: session data, event logs, temporary data
+- reduces cost by automatically removing data which is no longer relevant
+- expressed in epoch time (unix time)
+
+# Streams
+- time-ordered sequence of item level modifications (insert, update, delete)
+- using to trigger events, replay transactions
+- logs are encrypted at rest and stored for 24 hours
+- accessed using a dedicated endpoint
+- PK is recorded 
+- before and after images can be captured
+- events recorded in near real-time
+- app can take action based on contents
+- event source for lambda, lambda polls and executes code based on stream event
