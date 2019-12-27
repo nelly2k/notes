@@ -1,10 +1,15 @@
 Description: Lambda deployed with cloudformation
-# Parameters:
-#   EnvName:
-#     Type: String
-#     Description: Name of an environment. 'dev', 'staging', 'prod' and any name.
-#     AllowedPattern: ^.*[^0-9]$
-#     ConstraintDescription: Must end with non numberic character.
+Parameters:
+  EnvName:
+    Type: String
+    Description: Name of an environment. 'dev', 'staging', 'prod' and any name.
+    AllowedPattern: ^.*[^0-9]$
+    Default: labs
+    ConstraintDescription: Must end with non numeric character.
+  AppName:
+    Type: String
+    Description: Name of that application
+    Default: cf-lambda
 Resources:
   LabsLambdaRole:
     Type: AWS::IAM::Role
@@ -13,15 +18,31 @@ Resources:
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
-          -
-            Action:
+          - Action:
               - sts:AssumeRole
             Effect: Allow
             Principal:
               Service: lambda.amazonaws.com
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AWSLambdaExecute
+  LabsLambdaPolicy:
+    Type: AWS::IAM::Policy
+    Description: Allow lambda to access logs
+    Properties:
+      PolicyName: 
+        Fn::Sub: ${EnvName}-${AppName}-policy 
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - "logs:*"
+            Resource: "*"
+      Roles:
+        - !Ref LabsLambdaRole
   LabsLambda:
     Type: AWS::Lambda::Function
-    Properties: 
+    Properties:
       Handler: index.handler
       Runtime: nodejs10.x
       Role: !GetAtt LabsLambdaRole.Arn
