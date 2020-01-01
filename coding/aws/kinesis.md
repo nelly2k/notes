@@ -16,3 +16,17 @@ __Streaming Data__ is data that is generated continuously by thousands of data s
 - social network data
 - geospatial data
 - IoT sensor data
+
+## Kinesis Streams
+- by default sores for 24 h, but can be increased to 7 days
+- data stored in _Shards_
+- data consumers (EC2) instances grabs data from Shards and convert to something useful. Sentiment analysis, predict stock market. 
+- Shard  - 5 transactions per second for reads, up to 2Mb and up to 1000 records per second to write - 1Mb. 
+
+## Kinesis Firehose
+- no shards
+- no worries about data consumers
+- no retention period
+
+## Analytics
+Can run SQL query
