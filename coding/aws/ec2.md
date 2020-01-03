@@ -35,3 +35,6 @@ Virtual disk, allow to create storage volumes and attach them to EC2 instancies.
 - ST1 - throughput optimised. Big data, warehouse, log processed. Cannot be boot server.
 - SC1 - Cold HDD. Infrequent usage. Fileserver. Cannot be book server.
 - Magnetic (obsolete)
+
+
+Individual instances are provisioned in Availability Zones

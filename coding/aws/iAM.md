@@ -43,9 +43,7 @@ Only can be attached to S3 buckets. Specify which actions allowed and which deni
 Size limits: 2kb per user, 5kb per group, 10kb per role. S3 policies up to 20 kb.
 You prefer to keep access control policies in the S3 environment.
 
-
 Explicit deny - deny everything for everybody - overrides an allow!
-
 
 ## Policy conflicts
 Whenever an AWS principle (user,group, role) issues a request to S3, the authorization decision depends on the union of all the IAM policies, S3 bucket policies, and S3 ACLs that apply.
@@ -53,3 +51,7 @@ Whenever an AWS principle (user,group, role) issues a request to S3, the authori
 So if you DENY access to something somewhere and then something else allows access, the DENY will override the ALLOW.
 
 Only if no method specifies a DENY and one or more methods specify an ALLOW will the request be allowed.
+
+# Web Identity Federation
+lets you give users access to AWS resources after they have successfully authenticated with a web-based identity provider like Amazon, Facebook or Google. The user receives an authentication code from the Web ID Provider, which they can trade for temporary AWS security credentials.
+[Cognito](./cognito.md)

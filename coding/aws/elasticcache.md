@@ -10,11 +10,18 @@ in memory cache in cloud
 - widely adopted memory object caching system
 - multi-threaded
 - no multi-AZ capability - no clustered 
+- keep things simple
+- scales you cache horizontally (scales out)
 
 ## Redis
 - open-source in-memory key-value store
-- supports more complex ata structure: sorted sets and lists
+- supports more complex data structure: sorted sets and lists
 - supports master/slave replication amd multi-AZ for cross AZ redundancy
+- advanced data types
+- data sorting and ranking
+- data persistence
+- multi AZ (availability zones)
+- pub/sub capabilities are needed
 
 # Caching strategies
 ## Lazy Loading

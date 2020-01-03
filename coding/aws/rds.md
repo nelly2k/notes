@@ -9,30 +9,40 @@ OLTP - on-line transaction processing
 - Aurora - free tear is not available
 - MariaDB
 
-#RedShift
-OAL - on-line analytics processing
+## Backups
 
-## Elasticache
-is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory caches, insted of relying entirely on slower disk-based datamases.
+- __Automated backups__ allow you to recover your database to any point in time within a "retention period". The retention period can be between one and 35 days. Automated backups will take a full daily snapshot and will also store transaction logs throughout the day, When you do a recovery, AWS will first choose the most recent daily backup, and then apply transaction logs relevant to that day. This allow you to do a point in time recovery down to a second, within the retention period. Backups are stored in S3. If you delete instance, backups are going to be deleted as well.
 
-- Memcached
-- Redis
+- __Snapshots__ are done manually. They are stored even after you delete the original RDS instant, unlike automated backups.
 
+Both a restored to a new RDS instance with a new DNS endpoint.
 
-## Script to install into EC2 instance
+## Encryption
+At rest, uses KMS. Once your RDS is encrypted, the data stored at rest in the underlying storage is encrypted, as are its automated backups read replicas, and snapshots. At the present time, encrypting an existing db instances is not supported. To use Amazon RDS encryption for an existing database, you must first create a snapshot, make a copy of that snapshot and encrypt the copy.
 
-1. Install php
-2. install my-sql
-3. start apache
-4. Create simple php page
+## Multi-AZ
+allows you to have an exact copy of your production db in another availability zone. AWS handles the replication for you, so when your production db is written to, this write will automatically be sync to the stand by db. 
 
-```
-#!/bin/bash  
-yum install httpd php php-mysql -y  
-yum update -y  
-chkconfig httpd on  
-service httpd start  
-echo "<?php phpinfo();?>" > /var/www/html/index.php
-cd /var/www/html  
-wget https://s3.amazonaws.com/acloudguru-production/connect.php
-```
+In the event of planned db maintenance, db instance failure, or an AZ failure, RDS will automatically failover to the standby os that db operations can be resume quickly without administrative intervention. 
+
+> Disaster recovery only.
+
+## Read Replica
+5 read replicas for production db be default.
+allow you to have read-only copy of your production db. This is achieved by using Asynchronous replication from the primary RDS instance to the read replica. You use read replicas primarily for very read-heavy database workloads.
+
+Available for:
+- mySQL
+- PostgreSQL
+- MariaDB
+- Aurora
+
+> Uses for scaling
+
+- must have automatic backups turn on
+- you can have read replicas of read replicas
+- each replica will have its own DNS end point
+- you can have read replicas that have Multi-AZ
+- you can create read replicas of Multi-AZ source databases
+- can be promoted to be a database, but breaks replication 
+- read replica can be in different AZ
