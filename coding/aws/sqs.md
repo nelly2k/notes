@@ -33,3 +33,8 @@ Order is guarantee and one time processed. No duplicates.
 
 
 Support message groups that allows multiple ordered messages groups within single group. Limited for 300 transactions per second (TPS).
+
+## Delay Queues
+- postpone delivery of new messages for number of seconds
+- message sent to the Delay Queue remain invisible to consumers for the duration of the delay period
+- default 0, max 900 seconds

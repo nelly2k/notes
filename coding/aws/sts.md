@@ -13,3 +13,8 @@ __Identity Broker__ - a service that allows you to take an identity from point A
 __Identity Store__ - services like AD, Facebook, Google
 
 __Identities__ - a user of a service like Facebook etc...
+
+# Assume role with Web Identity
+- _assume-role-with-web-identity_ is an API provided by STS 
+- returns temporary security credentials for users authenticated by a mobile or web application or web ID provider
+- for mobile apps, Cognito is recommended

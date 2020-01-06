@@ -19,3 +19,18 @@ enables you to create unique identities for your users and authenticate them wit
 ## Push Synchronization
 
 Cognito tracks the association between user identity and the various different devices they sign-in from. Cognito users Push Sync to push updates ad sync user data across multiple devices. SNS is user to send silent push notifications to all the devices associated with a given user identity whenever data stored in the cloud changes.
+
+## :green_book: Lab
+- Cognito
+- Create User pool
+- add client
+- add domain 
+
+to fetch token
+curl -X POST --user <app client id>:<app client secret> 'https://api-product.auth.us-east-1.amazoncognito.com/oauth2/token?grant_type=client_credentials' -H 'Content-Type: application/x-www-form-urlencoded'
+
+url:<Your Cognito Domain>/login?response_type=token&client_id=<Your App Client ID>&redirect_uri=https://example.com
+
+
+to delete first delete domain then delete user pool
+
