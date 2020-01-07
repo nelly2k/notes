@@ -54,10 +54,10 @@ retry based on data expiration
 ## Version Control
 - Lambda can have multiple versions function deployed
 - Latest always is going to be marked as $LATEST
-- alias is a pointer to a specific version
 - Versions are immutable
 - Can split traffic using aliases to different versions
 - Cannot split traffic with $latests, unless an alias created for it.
+- alias is a pointer to a specific version
 
 # Step Functions
 ![Step function](./stepfunction.jpg)
@@ -73,3 +73,11 @@ retry based on data expiration
 - exception __TooManyRequestsException__, https status code: 429
 - need to contact support through console
 - __reserved concurrency__ guarantees that a set number of execution which will always be available for you critical function, however this also acts as a limit
+
+## VPC access
+- allow the function to connect to private network
+- ```aws lambda update-function-configuration --function-name my-function --vpc-config SubnetIds=subnet-1122aabb,SecurityGroupIds=sg-51530134```
+- required VPC credentials
+    - private subnet ID
+    - security group ID
+    - Lambda uses this information to set up ENIs using an available IP address from your private subnet

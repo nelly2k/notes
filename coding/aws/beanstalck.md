@@ -45,3 +45,7 @@ example myHealthcehckurl.config
 In order to connect to RDS
 - Security Group must be added to your environment's scaling group
 - need to provide connection string using Elastic Beanstalk environment properties
+
+# Docker containers
+- you can run one or many containers in one EC2 instance as a cluster
+- just upload a zip file with Dockerfile and supporting files
