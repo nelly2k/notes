@@ -57,3 +57,11 @@ Only if no method specifies a DENY and one or more methods specify an ALLOW will
 lets you give users access to AWS resources after they have successfully authenticated with a web-based identity provider like Amazon, Facebook or Google. The user receives an authentication code from the Web ID Provider, which they can trade for temporary AWS security credentials
 
 see [Cognito](./cognito.md)
+
+## IAM Policy Simulator
+- test the effect of policies
+- validates the policies works as expected
+
+[Policy Simulator](https://policysim.aws.amazon.com/)
+
+[Documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html)

@@ -38,3 +38,10 @@ Support message groups that allows multiple ordered messages groups within singl
 - postpone delivery of new messages for number of seconds
 - message sent to the Delay Queue remain invisible to consumers for the duration of the delay period
 - default 0, max 900 seconds
+- no affecting messages currently in a queue, unless it is FIFO queue
+
+## Large messages
+- use S3 to store messages
+- between 256KB and 2GB
+- select all messages in S3 or only certain size
+- use AWS SDK for Java (!)
