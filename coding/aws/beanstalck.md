@@ -48,4 +48,4 @@ In order to connect to RDS
 
 # Docker containers
 - you can run one or many containers in one EC2 instance as a cluster
-- just upload a zip file with Dockerfile and supporting files
+- just upload a zip file with Dockerfile and supporting files from S3 or local machine

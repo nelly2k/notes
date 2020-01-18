@@ -30,3 +30,5 @@ __Streaming Data__ is data that is generated continuously by thousands of data s
 
 ## Analytics
 Can run SQL query
+
+> When resharding increases the number of shards in the stream, the corresponding increase in the number of record processors increases the load on the EC2 instances that are hosting them. If the instances are part of an Auto Scaling group, and the load increases sufficiently, the Auto Scaling group adds more instances to handle the increased load. You should configure Auto Scaling to automatically scale your instances based on appropriate metrics, e.g. CPU utilization.
