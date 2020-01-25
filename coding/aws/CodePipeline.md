@@ -1,6 +1,9 @@
 CodeCommit - source control 
+
 CodeBuild - build server
+
 CodeDeploy - deployment
+
 All together is CodePipeline
 
 # CodeCommit
