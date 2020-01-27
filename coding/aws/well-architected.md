@@ -33,10 +33,37 @@ Does your architecture work? Will it continue to?
     - Are team evaluation their process
     - Experiment early 
 ## Cost Optimisation
-Spend only what you have to
+Deliver business value for the lowest price point
 - consumption based pricing
 - measure efficiency constantly
 - let AWS do the work whenever possible
+> ...a continual process or refinement and improvement of a system over its entire lifecycle
+### Areas
+- Cost effective resources
+    - Doesn't mean cheapest
+    - Provision to current needs with an eye to future
+    - "Right size", e.g. EC2 instances selection
+    - Collect usage data, analyse, and base decisions based on data
+    - Optimize by geography, consider userbase
+    - Default to managed services, consider skills and support
+    - Optimize data transfer, especially among regions
+- Match Support & Demand
+    - Pay for only that you use
+    - Consumption models
+        - Demand-based, ec2
+        - Buffer-based, SNS topic
+        - Time-base, kineses
+- Awareness of Spend
+    - aware of what are you using
+    - understand stakeholders
+    - governance model, cloudwatch for spending
+    - Use tags for optimising cost
+    - track lifecycle
+- Optimise
+    - align utilization with business requirements
+    - report and validate your findings
+    - evaluate new services for value (look for new managed services), part for feedback loop
+    - continue push to managed services (skills, maintenance, __business value__)
 ## Reliability
 Will this system work consistently & recover quickly?
 - recover from issue automatically
