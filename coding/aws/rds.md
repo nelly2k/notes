@@ -1,5 +1,10 @@
 
 # Relational database service
+- Managed database option  designed to replace on-prm dbs. 
+- Best for structured, relational data store needs. 
+- Automated backups, patching
+- push button scaling, replicating and redundancy
+
 OLTP - on-line transaction processing
 
 - SQL
@@ -46,3 +51,12 @@ Available for:
 - you can create read replicas of Multi-AZ source databases
 - can be promoted to be a database, but breaks replication 
 - read replica can be in different AZ
+
+
+# Anti-patterns
+- don't store binary objects, use S3
+- Automated scalability, use DynamoDB
+- Name/Value data structure, use DynamoDB or other NoSQL
+- data not well structure, unpredictable, use DynamoDb
+- other database platform, like IBM DB2 or SAP HANA, install it into EC2
+- need complete control, use EC2 

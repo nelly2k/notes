@@ -10,3 +10,4 @@ The Storage Gateway service is primarily used for attaching infrastructure locat
 - File Gateway. Allow on-prem or EC2 instances to store objects in S3 via NFS or SMB mount point .
 - Volume Gateway Stored Mode (Gateway-stored Volumes). Async replication of on-prem data to S3, iSCSI
 - Volume Gateway Cache Mode (Gateway-cached Volumes). Primary data stored in S3 with frequently access data cached locally on-prem. iSCSI
+- Tape Gateway (Gateway-Virtual Type Library). Virtual media changer and type library for use with existing backup software.
