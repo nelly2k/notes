@@ -3,13 +3,18 @@ Amazon DynamoDB is a fast and flexible NoSQL database service for all applicatio
 
 - Stored on SSD storage
 - spread across 3 geographical distinct data centers
+- managed, multi-AZ NoSQL data store with Cross-Region replication option
+- doesn't scale down, only up, on-demand capacity - for premium
 
 ## Consistency models
 ### Eventual consistent reads (default)
 Consistency across all copies of data is usually reached within a second. Repeating a read after a short time should remain the updates data (Best Read Performance)
+- eventual consistency due to multi-AZ replication
 
 ### Strongly consistent reads
 read returns a result that reflects all writes that received a successful response prior to the read
+
+- defaults to eventual consistency reads but can request strongly consistent read via SDK parameter. Read might fail.
 
 ## Glossary
 - Tables

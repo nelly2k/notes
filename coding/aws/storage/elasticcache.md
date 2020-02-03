@@ -12,6 +12,8 @@ in memory cache in cloud
 - no multi-AZ capability - no clustered 
 - keep things simple
 - scales you cache horizontally (scales out)
+### Usage
+- database caching. Cache popular queries results
 
 ## Redis
 - open-source in-memory key-value store
@@ -22,6 +24,13 @@ in memory cache in cloud
 - data persistence
 - multi AZ (availability zones)
 - pub/sub capabilities are needed
+- supports encryption
+- clustering
+- backups/restore
+
+### Usage
+- web session store. The session info is not lost
+- Leaderboards for mobile app
 
 # Caching strategies
 ## Lazy Loading

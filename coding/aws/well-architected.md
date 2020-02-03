@@ -181,7 +181,82 @@ Architecture is a living things, constantly evolve. Need data driven approach.
 
 # Modern Application Development
 There is no right design, jus`t a series of improvements.
+All about tactics. 
 
 - Idea
 - Experiment
 - Feedback 
+
+## Modern application capabilities
+- Secure
+- Resilient
+- Elastic
+- Modular
+- Automated
+- Interoperable
+
+## Paths to Modernization
+- Re-host -> Forklift as-is from the data center
+- Re-Platform -> Forklift with small modifications. Enable auto-scale, multi-region. Small tweaks.
+- Re-factor -> break up the monolith. Setting up yourself to long-term success.
+- Re-invent -> Serverless, microservices...
+
+## Checklist
+- Build security & compliance into the fabric of the application from the day one.
+- Microservices by default. Use data driven approach
+- Serverless is the starting point
+- Everything is code
+- CI/CD runs the application from day one
+- Monitoring, traceability, and observability are priorities 
+
+> Continue to innovate through low-risk experiments
+
+# Operations, Game days, Incident Response
+- Does the design translate to reality?
+- Do you know is something broken?
+- What if X broken, is Y going to continue to works?
+
+## Runbook
+A __runbook__ is versioned, tested, & the single source of operations.
+
+- Makes operations easy
+- Reduce errors
+- Cuts down on work
+- Versioned on git/version control
+- Starts with cloudformation script/many
+- Automates everything
+- Include tests
+- Idempotent (always works the same)
+
+## [GameDay](https://aws.amazon.com/gameday/)
+
+- learning exercise, spin up prod like environemtn
+- uncover gaps in runbook
+
+1. create duplicate environment with simulated data
+2. give team chance to react
+3. expect the unexpected
+
+## Phases of [incident response](https://d1.awsstatic.com/whitepapers/aws_security_incident_response.pdf)
+- Prepare, Runbook
+- Identify. What is happening.
+- Contain, so it doesn't spread
+- Eradicate, e.g. remove malware
+- Recover, restore service back to production
+- Learn, add more records to a runbook
+
+# Security
+## Identity
+- Keep policy small, generally one policy per workflow
+- [IAM best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+
+## Encryption
+### In transit
+- use ssl/tls even internally (encryption in transit)
+- end-to-end encryption (data never get decrypted/re-encrypted on the way). Sometimes we need to terminate the connection.
+- Use a VPN to connect to on-premises resources
+- be aware of monitoring impact, loose ability to monitor, cannot see inside transaction.
+### At rest
+- where is the key stored? Should be separated from data?
+- under what conditions is the key released?
+- are key being rotated? Can you decrypt backups with the new version of a key?
