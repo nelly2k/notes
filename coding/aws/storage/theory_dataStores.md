@@ -20,3 +20,19 @@ __BASE__
 - Basic Availability - values available event if stale
 - Soft-state - might not be instantly consistent across stores
 - Eventual Consistency - will achieve consistence at some point
+
+
+# DB Comparison
+[Storage Services Whitepaper](https://d1.awsstatic.com/whitepapers/Storage/AWS%20Storage%20Services%20Whitepaper-v9.pdf)
+
+[Multitenant Storage strategies](https://d1.awsstatic.com/whitepapers/Multi_Tenant_SaaS_Storage_Strategies.pdf)
+
+[Elasticache performance](https://d1.awsstatic.com/whitepapers/Multi_Tenant_SaaS_Storage_Strategies.pdf)
+
+- EC2 - ultimate control, db not available as managed
+- RDS - traditional relational db, well-formed data
+- DynamoDb - name/value pair or unpredictable structure, in-memory performance with persistance. High I/O, scale dynamically
+- Redshift - massive amount of data, OLAP
+- Neptune - relationship between objects a major portion of data value. Graph DB
+- Elasticache - fast temporary storage for small amount of data, highly volatile data
+ - S3 - blobs
