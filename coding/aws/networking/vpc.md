@@ -48,3 +48,31 @@ a logically isolated section of the AWS Cloud where you can launch AWS resources
 - 10.0.0.2 - for Amazon RDS
 - 10.0.0.3 - future use
 - 10.0.0.255 - VPC doesn't support broadcast so AWS reserves this address
+
+## Network to VPC connectivity
+- AWS Managed VPN. Quick and simple. Dependent on internet connection
+- AWS Direct Connect - dedicated network connection over private lines straight into AWS backbone. Create VIF to connect to VPC (private VIF). More predictable. 
+- AWS Direct Connect + VPN. IPsec VPN over private lines
+- AWS VPN CloudHub. Connect locations in a Hub and Spoke manner using AWS's Virtual Private Gateway. Collection of remote offices.
+- Software VPN. DIY VPN. You provide your own VPN endpoint and software.
+- Transit VPC. Common strategy for connecting geographically disperse VPCs and locations in order to create a global network transit center. Ultimate flexibility, but you must design for additional redundancy.
+
+## VPC to VPC
+- peering. Uses AWS backbone without touching internet.  Transitive peering is not supported). 
+- software VPN
+- Software to AWS managed VPN
+- AWS Managed VPN
+- AWS Direct Connect
+- AWS PrivateLink. AWS-provided network connectivity between VPCs and/or AWS services using interface endpoints. Private Subnet is private.
+
+## VPC endpoint
+### Interface Endpoint
+- Elastic Network Interface with an Private IP
+- Uses DNS entries to redirect traffic
+- API Gateway, CloudFormation, CloudWatch, etc.
+- Securing by security Group
+### Gateway Endpoint
+- A gateway that is a target for specific route
+- uses prefix lists in the route table to redirect traffic
+- S3, DynamoDB
+- Securing with VPC Endpoint Policies
