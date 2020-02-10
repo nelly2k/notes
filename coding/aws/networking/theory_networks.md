@@ -24,3 +24,26 @@ Choose alias over CNAME
 
 
 __TTL__ time ti live. The length that a DNS record is cached on either the Resolving Server or the users own local PC in equal to the value of the TTL in seconds
+
+## TCP vs UDP vs ICMP
+### TCP (L4, Transport)
+- Connection based stateful, acknowledges receipt
+- After everything I say, I want to confirm that you received it.
+- Uses: Web, Email, File Transfer
+### UDP (L4, Transport)
+- Connectionless, stateless, simple, not retransmission delays
+- I'm going to start talking and its ok if you miss some words
+- Uses: Streaming media, DNS
+### ICMP (L3, Network)
+- Used be network devices to exchange info
+- We routers can keep in touch about the health of the network using our own language
+- Uses: traceroute, ping
+
+
+## Ephemeral Ports
+- short-lived transport protocol used in IP communications
+- Above well-known IP ports (above 1024)
+- "Dynamic Ports"
+- Suggested range is 49152 - 65535. Different OS uses different ranges
+- NACL and security group implications
+
