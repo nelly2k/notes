@@ -76,3 +76,9 @@ a logically isolated section of the AWS Cloud where you can launch AWS resources
 - uses prefix lists in the route table to redirect traffic
 - S3, DynamoDB
 - Securing with VPC Endpoint Policies
+
+## Routing table
+- VPC have an implicit router and main routing table
+- ou can modify the main routing table or create new tables
+- each route table contains a local route for the CIDR block
+- most specific route for an address wins

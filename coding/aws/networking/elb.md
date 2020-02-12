@@ -1,5 +1,9 @@
 # Elastic Load Balancer
 Balancing load across multiple web services.
+- distributes inbound connections to one or many backend endpoints
+- can be used for public or private workloads
+- consumes IP addresses withing a  VPC subnet
+- scale - elastic
 
 ## Types
 ### Application [OSI 7](./osi.md)

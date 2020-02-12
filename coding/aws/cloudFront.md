@@ -20,3 +20,7 @@ CloudFront also works with any non-AWS origin server.
 enables fast, easy, and secure transfers of files over long distances between your end users and S3 bucket. 
 
 Transfer Acceleration takes advantage of Amazon CloudFront's globally distributed edge locations. As the data arrives at an edge over an optimized network path. 
+
+## SMI Server Name Indicator
+To overcome certificate problem
+CloudFront serves your content over HTTPS only to clients that support SNI. Older browsers and other clients will get HTTP.
