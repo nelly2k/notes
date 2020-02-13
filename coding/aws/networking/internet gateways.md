@@ -25,6 +25,9 @@ Providing internet to our VPC
 - Not supported for IPv6 
 - NAT instances must live on a public subnet with route to Internet Gateway
 - Private instances in private subnet must have route to the NAT instance, usually the default route destination of 0.0.0.0/0
+- Allow you detach and attach Elastic IP
+- can have access to Security Groups
+- can be configured to support port forwarding  
 
 ## NAT Gateway
 - Fully managed NAT service that replaces needs for NAT instance on EC2

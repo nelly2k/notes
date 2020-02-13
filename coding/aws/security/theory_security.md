@@ -12,13 +12,6 @@ Privacy. Not necessary secret, but expose to third party where needed, based on 
 - encryption
 - MFA
 
-### Availability
-Redundancy, multiple availability zones. Design for failure.
-- scaling
-- regions
-- zones
-- health checks
-
 ### Integrity
 Consistency, accuracy and trustworthy of data. Data cannot be altered by third party people. Access control. Checksum.
 - SSL
@@ -28,6 +21,12 @@ Consistency, accuracy and trustworthy of data. Data cannot be altered by third p
 - version control
 - MFA
 
+### Availability
+Redundancy, multiple availability zones. Design for failure.
+- scaling
+- regions
+- zones
+- health checks
 
 ## AAA Model
 Authentication, Authorization, Accounting
@@ -119,3 +118,27 @@ Asset, audit and evaluate resources. Review changes in configuration and relatio
 - define rules
 
 CloudTrail - event history of account activity, including actions taken through console, API, SDK, CLI.
+
+
+# SAML vs OAuth vs OpenID
+## SAML 2.0
+- handles authentication adj authorization
+- XML based protocol
+- can contain user, group membership and other useful information
+- assertions in the XML for authentication, attributed or authorization
+- best suited for SSO for enterprise users
+
+## OAuth 2.0
+- allow sharing or protected assets without having to send login credentials
+- handles authorization only
+- issues token to client
+- application validates token with Authorization Server
+- Delegate access, allowing the client application to access information on behalf of user 
+- best suited for API authorization between apps
+
+## OpenID Connect
+- Identity layer built on top of OAuth 2.0 adding authentication
+- uses REST/JSON message flows
+- supports web clients, mobile clients, JavaScript clients
+- Extensible
+- Best suited for SSO for consumers
