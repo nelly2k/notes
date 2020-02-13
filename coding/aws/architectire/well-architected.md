@@ -195,11 +195,6 @@ All about tactics.
 - Automated
 - Interoperable
 
-## Paths to Modernization
-- Re-host -> Forklift as-is from the data center
-- Re-Platform -> Forklift with small modifications. Enable auto-scale, multi-region. Small tweaks.
-- Re-factor -> break up the monolith. Setting up yourself to long-term success.
-- Re-invent -> Serverless, microservices...
 
 ## Checklist
 - Build security & compliance into the fabric of the application from the day one.
