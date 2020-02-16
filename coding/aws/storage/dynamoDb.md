@@ -128,7 +128,7 @@ _ProvisionedThoughputExceededException_ - your request rate is too high for read
 Is a fully managed, clustered in-memory cache for DynamoDb
 
 - up to 10x read performance improvement
-- ideal fir read-heavy and bursty workloads
+- ideal for read-heavy and bursty workloads
 - write-through caching service - data is written to the cache as well as the back end store at the same time
 - allow you point your dynamoDb API calls to the DAX cluster
 - if item not available then go to dynamoDb and cache
@@ -164,3 +164,17 @@ defines an expiry time for your data
 - events recorded in near real-time
 - app can take action based on contents
 - event source for lambda, lambda polls and executes code based on stream event
+
+# Scaling
+- throughput. read capacity units, write capacity units
+- size. Max item size is 400kb
+
+## Auto Scaling 
+- using Target Tracking method to try to stay close to target utilization
+- doesn't scale down, if consumption drops to 0
+
+## On-Demand Scaling
+- alternative to auto-scaling
+- useful if you can't deal with scaling lag or truly have no idea of the anticipated capacity requirements
+- instantly allocates capacity as needed with no concept of provisioned capacity
+- cost more

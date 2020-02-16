@@ -16,6 +16,18 @@ performance.
 
 CloudFront also works with any non-AWS origin server.
 
+Can deliver content by caching static and dynamic content. Dynamic content delivery is achieved using HTTP cookies forwarded from your origin. Supports streaming. 
+
+Origins can be S3, EC2, ELB or another web server.
+
+Support geo-restrictions, to now show some content to certain locations.
+
+# Invalidation requests
+1. delete file from origin and wait for the TTL to expire
+1. use console
+1. use API
+1. third party tools
+
 ## Transfer Acceleration
 enables fast, easy, and secure transfers of files over long distances between your end users and S3 bucket. 
 
@@ -24,3 +36,4 @@ Transfer Acceleration takes advantage of Amazon CloudFront's globally distribute
 ## SMI Server Name Indicator
 To overcome certificate problem
 CloudFront serves your content over HTTPS only to clients that support SNI. Older browsers and other clients will get HTTP.
+

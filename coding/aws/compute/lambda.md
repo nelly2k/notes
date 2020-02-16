@@ -2,7 +2,6 @@
 
 is a compute service where you can upload your code and create a Lambda function.Lambda takes care of provisioning and managing servers that you use to run the code.
 
-
 Can be used as an event-driven compute service where Lambda get invoked in response to an event. For example, event could be changes to data in a S3, DynamoDb table, HTTP request using API Gateway or API calls using SDK.
 
 ## Languages
@@ -58,13 +57,6 @@ retry based on data expiration
 - Can split traffic using aliases to different versions
 - Cannot split traffic with $latests, unless an alias created for it.
 - alias is a pointer to a specific version
-
-# Step Functions
-![Step function](./stepfunction.jpg)
-- serverless application visualisation
-- SF triggers and tracks each step
-- SF logs
-
 
 ## Concurrent Execution
 - there is a concurrent execution limit for Lambda

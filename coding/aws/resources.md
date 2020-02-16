@@ -16,3 +16,11 @@
 - [VPC Fundamentals & Connectivity Options](https://www.youtube.com/watch?v=jZAvKgqlrjY)
 
 - [Youtube re:Invent](https://www.youtube.com/results?search_query=aws+reinvent)
+
+## Scaling
+- [Web Application Hosting in the AWS Cloud](https://d1.awsstatic.com/whitepapers/aws-web-hosting-best-practices.pdf)
+- [Implementing Microservices](https://d1.awsstatic.com/whitepapers/microservices-on-aws.pdf)
+- [:tv: Elastic Load Balancing Deep Dive and Best Practices](https://www.youtube.com/watch?v=9TwkMMogojY)
+- [Automating Elasticity](https://d1.awsstatic.com/whitepapers/cost-optimization-automating-elasticity.pdf)
+- [Performance at Scale with Amazon ElastiCache](https://d0.awsstatic.com/whitepapers/performance-at-scale-with-amazon-elasticache.pdf)
+- [Introduction to Scalable Gaming Patterns on AWS](https://d0.awsstatic.com/whitepapers/aws-scalable-gaming-patterns.pdf)

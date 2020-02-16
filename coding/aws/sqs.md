@@ -21,7 +21,7 @@ Amazon SQS long polling is a wy to retrieve messages from your Amazon SQS queues
 - visibility timeout - __30sec__, increase if it takes >30 seconds to complete. Max __12__ hours.
 - short polling - returned immediately even if no messages are in the queue. 
 - long polling - polls the queue periodically and only returns a response when a message is in the queue or go the timeout is reached. Max __20__ sec
-
+- has an integration with KMS so messages can be encrypted
 
 ### Standard (default)
 

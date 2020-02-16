@@ -22,6 +22,7 @@ __Streaming Data__ is data that is generated continuously by thousands of data s
 - data stored in _Shards_
 - data consumers (EC2) instances grabs data from Shards and convert to something useful. Sentiment analysis, predict stock market. 
 - Shard  - 5 transactions per second for reads, up to 2Mb and up to 1000 records per second to write - 1Mb. 
+ - Records consists of Partition Key, Sequence Number and Data Blob
 
 ## Kinesis Firehose
 - no shards
@@ -32,3 +33,6 @@ __Streaming Data__ is data that is generated continuously by thousands of data s
 Can run SQL query
 
 > When resharding increases the number of shards in the stream, the corresponding increase in the number of record processors increases the load on the EC2 instances that are hosting them. If the instances are part of an Auto Scaling group, and the load increases sufficiently, the Auto Scaling group adds more instances to handle the increased load. You should configure Auto Scaling to automatically scale your instances based on appropriate metrics, e.g. CPU utilization.
+
+## Interactions
+Data can be read using API or KCL Kinesis Client Library - recommended. Kinesis Producer Library allow writing to Kinesis Streams and not reading. 
