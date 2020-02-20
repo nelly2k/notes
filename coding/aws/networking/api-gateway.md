@@ -23,3 +23,40 @@ You can enable API caching in order to cache you endpoint;s response.
 
 ## Same Origin Policy
 Under the policy, a web browser permits scripts contained in a first web page to access data in second web page, but only if both pages have the same origins. This is preventing XSS attacks. 
+
+
+## What API Gateway can do?
+- mocking responses
+- integrate directly with dynamodb
+- validate request body (if it not valid it bounce back and we don't pay for these)
+- authorization
+- map data -> reshape request/response body with templates
+- integrate with http requests
+- response custom errors
+- throttle requests by API key, or/and per path (granular). Method cannot override account
+- integrate with WAF (firewall) to protect API 
+    - SQL injections
+    - XXS attacks
+    - block specific IP
+    - block requests from certain countries
+    - match specific string or regular expression patters in the HTTP header, method, query , UR or body
+    - block specific user-agents, bots and so on.
+- black listing/white listing should be implemented with resource policy
+- gather metrics
+    - errors
+    - count
+    - latency
+    - integration latency
+    - cacheHitCount
+    - cacheMissCount
+    - x-ray metrics
+    - audit, AWS config
+    - log (can customize log format)
+
+
+## Authorization/authentication options
+- anonymous
+- IAM permissions
+- cognito authorizer
+- custom/lambda authorizer
+
