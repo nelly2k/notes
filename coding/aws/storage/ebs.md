@@ -15,3 +15,13 @@
 
 ## Data Lifecycle Manager
 Helps manage EBS Snapshots, you can automate the creation and deletion on schedule. Have retention rules
+
+## Business continuity
+- Availability 99.999%
+- replicated automatically within __single AZ__
+- vulnerable to AZ failure
+- easy to snapshot, stored in S3 which is multi AZ durable
+- supports RAID
+
+![RAID](./raid.jpg)
+- RAID5 & RAID6 not recommended

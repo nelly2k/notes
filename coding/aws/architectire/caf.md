@@ -1,4 +1,5 @@
-# Migration strategies
+# Cloud Adoption Framework
+
 ## Paths to Modernization
 - Re-host -> "Lift and shift", Forklift as-is from the data center. e.g. Move on-prem MySQL database to EC2 instance
 - Re-Platform :star: :star: -> "Lift and Reshape", Forklift with small modifications. Enable auto-scale, multi-region. Small tweaks. e.g. Migrate on-prem MySQL database to RDS MySQL

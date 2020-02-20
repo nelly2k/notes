@@ -1,7 +1,17 @@
 # VPC (Virtual Private Cloud)
-[Docs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
+
 
 ![VPC Components](./vpc-components.png)
+## Components
+- A Virtual Private Cloud - a logically isolated vurtual network in the AWS cloud. You defined a VPC's IP address space from ranges you select.
+- Subnet - a segment of a VPC's IP address range where you can place groups of isolated resources
+- Internet Gateways - The Amazon VPC side of connection to the public internet
+- NAT Gateway - A highly available, managed Network Address Translation service for your resources in a private subnet to access int Internet
+- Virtual private gateway - The Amazon VPC side of connection
+- Peering Connection - A peering connection enables you to route traffic via private IP addresses between two peered VPCs.
+- VPC Endpoints - Enables private connectivity to services hosted in AWS, from within your VPC without using an Internet Gateway, VPN, Network Address Translation (NAT) devices, or firewall proxies.
+- Egress-only Internet Gateway - A stateful gateway to provide egress only access for IPv6 traffic from the VPC to the Internet.
+
 
 a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network you define. Full control:
 - own IP address, both IPv4 and IPv6
@@ -58,7 +68,7 @@ a logically isolated section of the AWS Cloud where you can launch AWS resources
 - Transit VPC. Common strategy for connecting geographically disperse VPCs and locations in order to create a global network transit center. Ultimate flexibility, but you must design for additional redundancy.
 
 ## VPC to VPC
-- peering. Uses AWS backbone without touching internet.  Transitive peering is not supported). 
+- VPC peering. Uses AWS backbone without touching internet.  Transitive peering is not supported). 
 - software VPN
 - Software to AWS managed VPN
 - AWS Managed VPN

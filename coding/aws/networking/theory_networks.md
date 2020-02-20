@@ -1,6 +1,8 @@
 # Regions, Availability Zones
 Each Region - separated geographic area, each region has multiple isolated locations - Availability Zones. 
 
+__CIDR__ Classless Inter-Domain Routing 
+
 ## DNS Types
 __SOA__ State Of Authority  - the name of the server that supplied the data for the zone, administrator, version of data file 
 

@@ -69,3 +69,11 @@ pros:
 cons:
 - most expensive DR option
 - can be perceived as wasteful as you have resources just standing around waiting for the primary to fail
+
+# Failure Mode and Effect Analysis (FMEA)
+- what could go wrong
+- what impact it might have
+- what is the likelihood of it to occurring
+- what is our ability to detect and react
+
+Severity * Probability * Detection = Risk Priority Number

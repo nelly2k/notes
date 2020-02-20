@@ -1,5 +1,5 @@
 # Elastic File Service
-- implementation of Network  file share (NFS)
+- implementation of Network file share (NFS)
 - Elastic storage capacity, and pay for only what you use
 - no need to provision
 - distributed among multiple AZ

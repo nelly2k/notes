@@ -1,0 +1,7 @@
+# AWS OpsWorks
+- managed instances of Chef and Puppet - automation platforms
+provide configuration management to deploy code, automate tasks, configure instances, perform upgrades, etc...
+
+- Chef
+- puppet enterprise
+- stacks 

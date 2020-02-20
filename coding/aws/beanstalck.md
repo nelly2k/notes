@@ -16,7 +16,8 @@ is a service for deploying and scaling web applications developed in popular lan
 - all at once. Deploys to all instances, all instances are going to out of services. Suitable for dev and test env.
 - rolling. In batches. No ideal for performance sensitive systems. 
 - rolling with additional batch. Launces additional batches.
-- immutable. Deploys to fresh instances, when passed health check then deploys to others. Maintain a full capacity. 
+- immutable. Deploys to fresh instances, when passed health check then deploys to others. Maintain a full capacity.
+- blue/green - CNAME DNS entry changed when new version is fully up, leaving old version in place until new is fully verified. No downtime. 
 
 ## Configuration
 Environment can be customized using config files. packages to install, Linux users and groups, run shell commands, specify services pr configure load balancer.
