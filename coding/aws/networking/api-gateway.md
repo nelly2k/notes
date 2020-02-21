@@ -52,6 +52,8 @@ Under the policy, a web browser permits scripts contained in a first web page to
     - x-ray metrics
     - audit, AWS config
     - log (can customize log format)
+    - API Gateway developer portal https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:563878140293:applications~api-gateway-dev-portal
+    - generate client certificate
 
 
 ## Authorization/authentication options
