@@ -66,6 +66,13 @@ retry based on data expiration
 - need to contact support through console
 - __reserved concurrency__ guarantees that a set number of execution which will always be available for you critical function, however this also acts as a limit
 
+Concurrency estimations:
+avg function execution time (seconds) x avg req/sec = concurrency estimate
+
+### Function execution context reuse
+Code outside the function handler can be reused across invocations.
+Static constructors, global/static variables, database connections. But you cannot rely on that really.
+
 ## VPC access
 - allow the function to connect to private network
 - ```aws lambda update-function-configuration --function-name my-function --vpc-config SubnetIds=subnet-1122aabb,SecurityGroupIds=sg-51530134```
@@ -73,3 +80,4 @@ retry based on data expiration
     - private subnet ID
     - security group ID
     - Lambda uses this information to set up ENIs using an available IP address from your private subnet
+

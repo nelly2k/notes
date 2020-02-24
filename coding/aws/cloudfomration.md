@@ -21,4 +21,30 @@
 - Template - file with instructions
 - stacks - set of tools
 - change sets - summary of proposed changes, indicates implications of changes
-- stack policies - protects specific resource within your stack from being unintentionally deleted or updated. Once applied cannot remove, but can update.
+
+## Stack Policy
+Can protect certain resources from deletion when automatically updated.
+```
+{
+    Statement:[
+        {
+            "Effect": "Deny",
+            "Action": "Update:*",
+            "Principal" : "*",
+            "Resource" : "resourceId/name"
+        }
+    ]
+}
+```
+
+:star: Must contain Allow policy, because if it is Deny only everything is going to be deny!  Once applied cannot remove, but can update using CLI.
+
+
+```
+{
+    "Effect": "Allow",
+    "Resource": "*",
+    "Action": "Update:*",
+    "Principal" : "*"
+}
+```

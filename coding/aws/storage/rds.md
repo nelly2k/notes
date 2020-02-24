@@ -53,6 +53,14 @@ Available for:
 - read replica can be in different AZ
 
 
+# RDS Proxy
+- lambda -> proxy -> rds
+- pools and shares database connection
+- preserves connection during DB failovers, lambda doesn't know connection is fail
+- manage credentials (one less call from lambda), can grab from secrets
+- fully managed
+
+
 # Anti-patterns
 - don't store binary objects, use S3
 - Automated scalability, use DynamoDB

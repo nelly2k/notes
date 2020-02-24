@@ -1,5 +1,29 @@
+## Operations
+- Query - read data once
+- Mutation - POST or PUT
+- Subscription - client subscribes to pushed changes
+
+## Terms
+- __schema__ is a list of types and operations that defined the data that an API can provide, and explain how that data can be queried
+- a __type__ is any defined type (integer, string) or custom type
+- a __client__ is any consumer of our API
+
+## Types
+```
+{
+  type Game {
+    title: String!
+    rating: Int!
+    comments: [Comment]
+    price: Double
+    inStock: Bool
+  }
+}
+```
+! - required
+
 ## List of items
-``` json
+```
 {
   exercise{
     id
