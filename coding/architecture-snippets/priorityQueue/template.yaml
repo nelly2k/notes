@@ -1,0 +1,77 @@
+Description: Priority queue implementation
+Parameters: 
+  AppName:
+    Type: String
+    Description: Application name
+    Default: archPriorityQueue
+Resources:
+  everythingQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub ${AppName}-everything
+      ReceiveMessageWaitTimeSeconds: 20
+  everythingQueueSub:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Endpoint: !GetAtt everythingQueue.Arn
+      Protocol: sqs
+      TopicArn: !Ref sns
+  priorityQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub ${AppName}-priority
+      ReceiveMessageWaitTimeSeconds: 20
+  priorityQueueSub:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Endpoint: !GetAtt priorityQueue.Arn
+      Protocol: sqs
+      TopicArn: !Ref sns
+      FilterPolicy: "{\"priority\":[\"0\"]}"
+  regularQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub ${AppName}-regular
+      ReceiveMessageWaitTimeSeconds: 20
+  regularQueueSub:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Endpoint: !GetAtt regularQueue.Arn
+      Protocol: sqs
+      TopicArn: !Ref sns
+      FilterPolicy: "{\"priority\":[\"1\"]}"
+  sns:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: !Sub ${AppName}-event
+
+  lambdaRole:
+    Type: AWS::IAM::Role
+    Description: Basic role for lambda
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Action:
+              - sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole
+  consumer:
+    Type: AWS::Lambda::Function
+    Properties: 
+      Handler: index.handler
+      Runtime: nodejs12.x
+      Role: !GetAtt lambdaRole.Arn
+      Code: ./consumer/
+      Environment:
+        Variables: 
+          priorityQueueName: !GetAtt priorityQueue.QueueName
+          regularQueueName: !GetAtt regularQueue.QueueName
+          region: !Ref AWS::Region
+Outputs:
+  snsTopicArn:
+    Description: SNS Topic Arn
+    Value: !Ref sns

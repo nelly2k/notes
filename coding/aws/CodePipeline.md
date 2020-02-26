@@ -76,3 +76,6 @@ __hooks__: lifecycle events
 - __BeforeAllowTraffic__ before registered with LB
 - __AllowTraffic__ register with LB
 - __AfterAllowTraffic__ after registration with LB
+
+## When to test? 
+![When to test](./codepipeline_test.jpg)

@@ -172,6 +172,9 @@ defines an expiry time for your data
 ## Auto Scaling 
 - using Target Tracking method to try to stay close to target utilization
 - doesn't scale down, if consumption drops to 0
+- static or automatic scaling are available
+- for very small (under 5/5 read/write capacity units) autoscaling costs more than it saves
+- autoscaling is not instant
 
 ## On-Demand Scaling
 - alternative to auto-scaling

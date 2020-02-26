@@ -10,3 +10,8 @@
 ## GraphQL proxy
 each part of the type can come from different data-sources.
 User sends single request to graphQL, and it gather data from various services.
+
+## Data sources
+- DynamoDB
+- ElasticSearch
+- Lambda
