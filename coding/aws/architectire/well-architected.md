@@ -1,5 +1,11 @@
 # Well-Architected framework
 
+- operational excellence
+- reliability
+- cost management
+- secure
+- performance
+
 ## Operational Excellence
 [Operation Excellence White Paper](https://d1.awsstatic.com/whitepapers/architecture/AWS-Operational-Excellence-Pillar.pdf)
 Does your architecture work? Will it continue to?

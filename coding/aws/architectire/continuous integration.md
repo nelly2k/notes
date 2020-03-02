@@ -17,4 +17,3 @@ Each code change that passes all stages of the released tp production with no hu
 - acceptance testing
 - deploy to production
 - smoke testing
-
