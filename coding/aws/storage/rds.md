@@ -33,7 +33,7 @@ In the event of planned db maintenance, db instance failure, or an AZ failure, R
 > Disaster recovery only.
 
 ## Read Replica
-5 read replicas for production db be default.
+5 read replicas for production db by default.
 allow you to have read-only copy of your production db. This is achieved by using Asynchronous replication from the primary RDS instance to the read replica. You use read replicas primarily for very read-heavy database workloads.
 
 Available for:
@@ -68,3 +68,12 @@ Available for:
 - data not well structure, unpredictable, use DynamoDb
 - other database platform, like IBM DB2 or SAP HANA, install it into EC2
 - need complete control, use EC2 
+
+# Scale
+## Vertically (scale up)
+- manually just select an instance size
+- Storage and instance size is decoupled, so scaling an instance size doesn't affect storage.
+- can select scale immediately, or schedule a maintenance window
+
+## Horizontally
+- for read-heave database, add read-replica 

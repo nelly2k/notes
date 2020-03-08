@@ -4,7 +4,7 @@
 - A __Data Source__ is any of the AppSync-supported providers for user data, such as DynamoDB or ElasticSearch
 - A __Resolver__ is a transformation written using Velocity Template Language (VTL) that changes the output from a data source to match the output os a schema
 - An __Operation__ is any type of GraphQL requests: query, mutation, or subscription. Multiple operations can be included in one request, but AppSync limits us to one mutation at a time
-
+- VTL can alter strings, lists, maps, numbers
 
 
 ## GraphQL proxy
