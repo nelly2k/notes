@@ -261,3 +261,15 @@ A __runbook__ is versioned, tested, & the single source of operations.
 - where is the key stored? Should be separated from data?
 - under what conditions is the key released?
 - are key being rotated? Can you decrypt backups with the new version of a key?
+
+# Serverless design
+Serverless application built using a collection of abstract services.
+
+- Event driven design
+- scalable as required
+- quick to implement
+- quick to run
+- concurrent
+- share nothing 
+- use state machine to coordinate work
+- design for failure/duplicates
