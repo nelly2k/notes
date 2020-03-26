@@ -1,6 +1,9 @@
 # Elastic Compute Cloud
-Virtual machines
-Linux/windows
+
+is a web service that provides resizable compute capacity in the cloud.
+
+- Virtual machines
+- Linux/windows
 
 AMI - Amazon Machine Image - a template
 
