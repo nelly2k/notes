@@ -186,7 +186,7 @@ Architecture is a living things, constantly evolve. Need data driven approach.
 - What is the timeline of the project?
 
 # Modern Application Development
-There is no right design, jus`t a series of improvements.
+There is no right design, just a series of improvements.
 All about tactics. 
 
 - Idea
