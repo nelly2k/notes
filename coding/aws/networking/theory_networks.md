@@ -1,5 +1,8 @@
 # Regions, Availability Zones
 Each Region - separated geographic area, each region has multiple isolated locations - Availability Zones. 
+- region - is an independent geographic area
+- availability zone - isolated location, all availability zones are connected through low latency network
+- local zone  - 
 
 __CIDR__ Classless Inter-Domain Routing 
 
